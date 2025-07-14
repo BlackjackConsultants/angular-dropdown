@@ -1,0 +1,33 @@
+<div class="app-container">
+  <header>
+    <h1>Angular Dropdown Demo</h1>
+    <p>A reusable dropdown component with customizable options</p>
+  </header>
+
+  <div class="demo-section">
+    <h2>Countries Dropdown</h2>
+    <app-dropdown 
+      [options]="countries"
+      placeholder="Select a country"
+      [disabled]="false">
+    </app-dropdown>
+  </div>
+
+  <div class="demo-section">
+    <h2>Fruits Dropdown</h2>
+    <app-dropdown 
+      [options]="fruits"
+      placeholder="Choose your favorite fruit"
+      [disabled]="false">
+    </app-dropdown>
+  </div>
+
+  <div class="demo-section">
+    <h2>Disabled Dropdown</h2>
+    <app-dropdown 
+      [options]="countries"
+      placeholder="This dropdown is disabled"
+      [disabled]="true">
+    </app-dropdown>
+  </div>
+</div>

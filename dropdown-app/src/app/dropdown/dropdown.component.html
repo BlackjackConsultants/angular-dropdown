@@ -1,0 +1,21 @@
+<div class="dropdown-container">
+  <select 
+    class="dropdown-select"
+    [disabled]="disabled"
+    (change)="onSelectionChange($event)"
+    [(ngModel)]="selectedValue">
+    
+    <option value="" disabled selected>{{ placeholder }}</option>
+    
+    <option 
+      *ngFor="let option of options" 
+      [value]="option.id">
+      {{ option.displayValue }}
+    </option>
+  </select>
+  
+  <div class="selected-info" *ngIf="selectedValue">
+    <p>Selected ID: {{ selectedValue }}</p>
+    <p>Selected Display Value: {{ getSelectedDisplayValue() }}</p>
+  </div>
+</div>
