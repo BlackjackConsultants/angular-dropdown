@@ -31,4 +31,8 @@ export class DropdownComponent {
     const selectedOption = this.options.find(opt => opt.id.toString() === this.selectedValue?.toString());
     return selectedOption?.displayValue || '';
   }
+
+  setValue() {
+    this.selectedValue = this.options[3].id; // Example value to set
+  }
 }

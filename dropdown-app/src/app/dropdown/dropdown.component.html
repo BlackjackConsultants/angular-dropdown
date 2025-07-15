@@ -17,5 +17,6 @@
   <div class="selected-info" *ngIf="selectedValue">
     <p>Selected ID: {{ selectedValue }}</p>
     <p>Selected Display Value: {{ getSelectedDisplayValue() }}</p>
+    <button class="clear-button" (click)="setValue()">Set value</button>
   </div>
 </div>
