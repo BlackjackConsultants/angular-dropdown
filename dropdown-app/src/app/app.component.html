@@ -9,8 +9,12 @@
     <app-dropdown 
       [options]="countries"
       placeholder="Select a country"
-      [disabled]="false">
+      [disabled]="false"
+      (selectionChange)="onCountryChange($event)">
     </app-dropdown>
+    <p *ngIf="selectedCountry" class="selection-info">
+      Selected Country: {{ selectedCountry }}
+    </p>
   </div>
 
   <div class="demo-section">
@@ -18,8 +22,12 @@
     <app-dropdown 
       [options]="fruits"
       placeholder="Choose your favorite fruit"
-      [disabled]="false">
+      [disabled]="false"
+      (selectionChange)="onFruitChange($event)">
     </app-dropdown>
+    <p *ngIf="selectedFruit" class="selection-info">
+      Selected Fruit: {{ selectedFruit }}
+    </p>
   </div>
 
   <div class="demo-section">

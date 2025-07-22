@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -17,12 +17,14 @@ export class DropdownComponent {
   @Input() options: DropdownOption[] = [];
   @Input() placeholder: string = 'Select an option';
   @Input() disabled: boolean = false;
+  @Output() selectionChange = new EventEmitter<string | number | null>();
   
   selectedValue: string | number | null = null;
 
   onSelectionChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.selectedValue = target.value;
+    this.selectionChange.emit(this.selectedValue);
     console.log('Selected option:', this.selectedValue);
   }
 
@@ -34,5 +36,6 @@ export class DropdownComponent {
 
   setValue() {
     this.selectedValue = this.options[3].id; // Example value to set
+    this.selectionChange.emit(this.selectedValue);
   }
 }
