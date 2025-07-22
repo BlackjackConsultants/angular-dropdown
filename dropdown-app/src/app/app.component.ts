@@ -32,17 +32,17 @@ export class AppComponent {
   ];
 
   // Properties to store selected values
-  selectedCountry: string | number | null = null;
-  selectedFruit: string | number | null = null;
+  selectedCountry: DropdownOption | null = null;
+  selectedFruit: DropdownOption | null = null;
 
   // Event handlers for dropdown changes
-  onCountryChange(selectedValue: string | number | null): void {
+  onCountryChange(selectedValue: DropdownOption): void {
     this.selectedCountry = selectedValue;
-    console.log('Country changed to:', selectedValue);
+    console.log('Country changed to:', selectedValue.id, selectedValue.displayValue);
   }
 
-  onFruitChange(selectedValue: string | number | null): void {
+  onFruitChange(selectedValue: DropdownOption): void {
     this.selectedFruit = selectedValue;
-    console.log('Fruit changed to:', selectedValue);
+    console.log('Fruit changed to:', selectedValue.id, selectedValue.displayValue);
   }
 }

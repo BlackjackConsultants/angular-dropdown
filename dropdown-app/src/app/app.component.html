@@ -13,7 +13,7 @@
       (selectionChange)="onCountryChange($event)">
     </app-dropdown>
     <p *ngIf="selectedCountry" class="selection-info">
-      Selected Country: {{ selectedCountry }}
+      Selected Country: {{ selectedCountry.displayValue }}
     </p>
   </div>
 
@@ -26,7 +26,7 @@
       (selectionChange)="onFruitChange($event)">
     </app-dropdown>
     <p *ngIf="selectedFruit" class="selection-info">
-      Selected Fruit: {{ selectedFruit }}
+      Selected Fruit: {{ selectedFruit.displayValue }}
     </p>
   </div>
 

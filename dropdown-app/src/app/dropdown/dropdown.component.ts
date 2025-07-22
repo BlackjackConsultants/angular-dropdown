@@ -17,14 +17,14 @@ export class DropdownComponent {
   @Input() options: DropdownOption[] = [];
   @Input() placeholder: string = 'Select an option';
   @Input() disabled: boolean = false;
-  @Output() selectionChange = new EventEmitter<string | number | null>();
+  @Output() selectionChange = new EventEmitter<DropdownOption>();
   
   selectedValue: string | number | null = null;
 
   onSelectionChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.selectedValue = target.value;
-    this.selectionChange.emit(this.selectedValue);
+    this.selectionChange.emit({ id: this.selectedValue, displayValue: this.getSelectedDisplayValue() });
     console.log('Selected option:', this.selectedValue);
   }
 
@@ -36,6 +36,6 @@ export class DropdownComponent {
 
   setValue() {
     this.selectedValue = this.options[3].id; // Example value to set
-    this.selectionChange.emit(this.selectedValue);
+    this.selectionChange.emit({ id: this.selectedValue, displayValue: this.getSelectedDisplayValue() });
   }
 }
